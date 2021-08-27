@@ -7,7 +7,7 @@ import {
     ScrollView,
     ActivityIndicator,
 } from 'react-native';
-import { Badge } from 'react-native-elements';
+import { Badge, Icon } from 'react-native-elements';
 import ConfirmationModal from '../../../../components/modals/confirmationModal';
 import getYearsSince from '../../../../utils/getYearsSince';
 import styles from './styles';
@@ -18,6 +18,7 @@ import useService from '../../../../services/useService';
 import shortenName from '../../../../utils/shortenName';
 import helpService from '../../../../services/Help';
 import colors from '../../../../../assets/styles/colorVariables';
+import UserCard from '../../../../components/InterestedList/UserCard';
 
 export default function OfferHelpDescription({ route, navigation }) {
     const { helpId, routeId } = route.params;
@@ -27,6 +28,8 @@ export default function OfferHelpDescription({ route, navigation }) {
     const [isFinishRequestLoading, setFinishRequestLoading] = useState(false);
     const [isHelpOfferLoading, setIsHelpOfferLoading] = useState(true);
     const [help, setHelp] = useState(null);
+
+    const [showHelpedUsers, setShowHelpedUsers] = useState(false);
     const goBackToMyOfferedHelpPage = () => navigation.goBack();
 
     useEffect(() => {
@@ -67,38 +70,78 @@ export default function OfferHelpDescription({ route, navigation }) {
 
     const navigateToHelpedUsersList = () => {
         navigation.navigate('ListHelpInteresteds', {
+            possibleInteresteds: help.possibleHelpedUsers.concat(
+                help.possibleEntities,
+            ),
+            message: 'Você deseja ajudar esse usuário?',
+            method: 'chooseHelpedUsers',
             helpId: help._id,
-            routeId: 'HelpOffer',
-            message: '',
         });
     };
 
-    const renderWaitingHelpOwnerMessage = () => {
-        if (user._id != help.ownerId) {
-            return (
-                <Text style={styles.waitingText}>
-                    Aguarde a confirmação do dono da ajuda.
-                </Text>
-            );
-        } else {
-            return (
-                <TouchableOpacity
-                    style={styles.buttonInteresteds}
-                    onPress={navigateToHelpedUsersList}>
-                    <Text style={styles.textBtn}>Possíveis Necessitados</Text>
-                    <Badge
-                        value={
-                            <Text style={styles.labelBadge}>
-                                {help.possibleHelpedUsers.length +
-                                    help.possibleEntities.length}
-                            </Text>
-                        }
-                        badgeStyle={styles.badgeStyle}
-                        containerStyle={styles.containerBadge}
-                    />
-                </TouchableOpacity>
-            );
+    const Button = (props) => {
+        const buttonStyle = { ...styles.buttonInteresteds };
+
+        if (props.marginBottom) {
+            buttonStyle.marginBottom = 15;
         }
+
+        const iconName = props.activated ? 'chevron-down' : 'chevron-right';
+
+        return (
+            <TouchableOpacity
+                style={[buttonStyle, styles.inline]}
+                onPress={props.onPress}>
+                <Text style={styles.textBtn}>{props.text}</Text>
+                {props.showArrow && (
+                    <View style={[styles.textBtn, styles.btnArrow]}>
+                        <Icon
+                            color="#FFF"
+                            name={iconName}
+                            type="font-awesome"
+                        />
+                    </View>
+                )}
+                <Badge
+                    value={
+                        <Text style={styles.labelBadge}>{props.badgeText}</Text>
+                    }
+                    badgeStyle={[styles.badgeStyle, styles.smallBadge]}
+                    containerStyle={styles.containerBadge}
+                />
+            </TouchableOpacity>
+        );
+    };
+
+    const renderWaitingHelpOwnerMessage = () => {
+        return (
+            <Text style={styles.waitingText}>
+                Aguarde o dono da ajuda entrar em contato.
+            </Text>
+        );
+    };
+
+    const renderHelpedUsersButtons = () => {
+        return (
+            <>
+                <Button
+                    text="Interessados"
+                    marginBottom
+                    onPress={navigateToHelpedUsersList}
+                    badgeText={
+                        help.possibleHelpedUsers.length +
+                        help.possibleEntities.length
+                    }
+                />
+                <Button
+                    text="Ajudados Escolhidos"
+                    showArrow
+                    onPress={() => setShowHelpedUsers(!showHelpedUsers)}
+                    activated={showHelpedUsers}
+                    badgeText={help.helpedUsers.length}
+                />
+            </>
+        );
     };
 
     const renderHelpOwnerInformation = () => {
@@ -106,7 +149,7 @@ export default function OfferHelpDescription({ route, navigation }) {
         const ownerPhoto = (help && help.user && help.user.photo) || user.photo;
 
         return (
-            <View style={styles.userInfo}>
+            <View style={[styles.userInfo, styles.noFlex]}>
                 <Image
                     source={{
                         uri: `data:image/png;base64,${ownerPhoto}`,
@@ -131,9 +174,11 @@ export default function OfferHelpDescription({ route, navigation }) {
     };
 
     const renderHelpInformation = () => (
-        <View style={styles.helpInfo}>
+        <View>
             <View style={styles.helpInfoText}>
-                <Text style={styles.titleFont}>{help.title}</Text>
+                <Text style={[styles.titleFont, styles.noPaddingBottom]}>
+                    {help.title}
+                </Text>
                 <View style={styles.categoryContainer}>
                     {help.categories.map((category) => (
                         <View key={category._id} style={styles.categoryWarning}>
@@ -143,14 +188,32 @@ export default function OfferHelpDescription({ route, navigation }) {
                         </View>
                     ))}
                 </View>
-                <Text style={[styles.infoText, styles.infoTextBottom]}>
+                <Text style={[styles.infoText, styles.smallMargin]}>
                     {help.description}
                 </Text>
             </View>
         </View>
     );
+
+    const renderHelpedUsers = () => {
+        return (
+            <ScrollView
+                style={styles.helpedUsers}
+                contentContainerStyle={{ flexGrow: 1 }}>
+                {help.helpedUsers.map((user) => (
+                    <UserCard
+                        key={user._id}
+                        user={user}
+                        showPhone
+                        handleClick={() => null}
+                    />
+                ))}
+            </ScrollView>
+        );
+    };
+
     return (
-        <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
+        <View style={{ flexGrow: 1 }}>
             <View style={styles.container}>
                 <ConfirmationModal
                     visible={confirmationModalVisible}
@@ -168,11 +231,14 @@ export default function OfferHelpDescription({ route, navigation }) {
                         {renderHelpOwnerInformation()}
                         {renderHelpInformation()}
                         <View style={styles.helpButtons}>
-                            {renderWaitingHelpOwnerMessage()}
+                            {user._id == help.ownerId
+                                ? renderHelpedUsersButtons()
+                                : renderWaitingHelpOwnerMessage()}
+                            {showHelpedUsers && renderHelpedUsers()}
                         </View>
                     </>
                 )}
             </View>
-        </ScrollView>
+        </View>
     );
 }

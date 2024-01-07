@@ -36,7 +36,7 @@ export default function ConfirmRegister({ route, navigation }) {
         }
 
         setIsLoading(false);
-        navigation.navigate('login');
+        navigation.navigate('walkthroughTutorial');
     }
 
     const titleCheckBox = (

@@ -8,6 +8,7 @@ import ForgotPassword from '../../pages/AuthPages/ForgotPassword';
 import InitialScreen from '../../pages/AuthPages/InitialScreen';
 import Location from '../../pages/AuthPages/Location';
 import ConfirmRegister from '../../pages/AuthPages/ConfirmRegister';
+import WalkthroughTutorial from '../../pages/AuthPages/WalkthroughTutorial';
 
 const Stack = createStackNavigator();
 const AuthRoutes = () => {
@@ -29,6 +30,7 @@ const AuthRoutes = () => {
             <Stack.Screen name="riskGroup" component={RiskGroup} />
             <Stack.Screen name="forgotPassword" component={ForgotPassword} />
             <Stack.Screen name="confirmRegister" component={ConfirmRegister} />
+            <Stack.Screen name="walkthroughTutorial" component={WalkthroughTutorial} />
         </Stack.Navigator>
     );
 };

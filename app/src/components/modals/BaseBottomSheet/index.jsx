@@ -20,6 +20,7 @@ export const BaseBottomSheet = ({
     handleComponent = null,
     background = 'white',
     isLoading,
+    onChange = () => {}
 }) => {
     useEffect(() => {
         bottomSheetRef.current?.present();
@@ -48,6 +49,7 @@ export const BaseBottomSheet = ({
                 handleComponent={handleComponent}
                 overDragResistanceFactor={overDragResistanceFactor}
                 backgroundStyle={{ backgroundColor: background }}
+                onChange={onChange}
             >
                 <FloatingIconButton
                     iconName={'close'}

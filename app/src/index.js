@@ -13,6 +13,7 @@ import CepContextProvider from './store/contexts/cepContext';
 import { ActivityBottomSheetContextProvider } from './store/contexts/activityBottomSheetContext';
 import { FeedbackContextProvider } from './store/contexts/feedbackContext';
 import { TimelineContextProvider } from './store/contexts/timelineContext';
+import WalkthroughStepsProvider from './store/contexts/walkthroughStepsContext';
 
 export default function Root() {
     return (
@@ -29,9 +30,11 @@ export default function Root() {
                                                 <FeedbackContextProvider>
                                                     <TimelineContextProvider>
                                                         <CepContextProvider>
+                                                          <WalkthroughStepsProvider>
                                                             <ScreenTemplateContextProvider>
                                                                 <Routes />
                                                             </ScreenTemplateContextProvider>
+                                                          </WalkthroughStepsProvider>
                                                         </CepContextProvider>
                                                     </TimelineContextProvider>
                                                 </FeedbackContextProvider>

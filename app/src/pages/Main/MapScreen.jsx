@@ -17,6 +17,7 @@ import { ActivityFlatList } from '../../components/atoms/ActivityFlatList';
 import { ActivitiesContext } from '../../store/contexts/activitiesContext';
 import { NotFound } from '../../components/organisms/NotFound';
 import { AnimatedMap } from '../../components/organisms/AnimatedMap';
+import WalkthroughTooltip from '../../components/WalkthroughTooltip';
 
 export default function MapScreen({ navigation }) {
     const { setIsLoading } = useContext(LoadingContext);
@@ -93,14 +94,20 @@ export default function MapScreen({ navigation }) {
             <View className="absolute bottom-3 ml-2 items-center w-full">
                 <View className="w-full pr-2">
                     <View className="flex-row mr-2">
-                        <Chips
-                            title="Filtrar"
-                            icon="filter-list"
-                            elevated
-                            customStyle="w-20 justify-center ml-1"
-                            type="button"
-                            onPress={() => setShouldRenderFilter(true)}
-                        />
+                        <WalkthroughTooltip 
+                          incomingWalkthroughStep={5}
+                          customCloseAction={() => setShouldRenderFilter(true)}
+                          useInteractionManager={true}
+                        >
+                            <Chips
+                                title="Filtrar"
+                                icon="filter-list"
+                                elevated
+                                customStyle="w-20 justify-center ml-1"
+                                type="button"
+                                onPress={() => setShouldRenderFilter(true)}
+                            />
+                        </WalkthroughTooltip>
                         {(storedActivities.length > 0 ||
                             storedCategories.length > 0) && (
                             <Chips
@@ -130,6 +137,7 @@ export default function MapScreen({ navigation }) {
             </View>
             {shouldRenderFilter && (
                 <ActivitiesFilterBottomSheet
+                    navigation={navigation}
                     handleCloseModal={() => setShouldRenderFilter(false)}
                     storedActivities={storedActivities}
                     storedCategories={storedCategories}

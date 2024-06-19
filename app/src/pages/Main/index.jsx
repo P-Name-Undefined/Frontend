@@ -11,12 +11,16 @@ import createInteraction from '../../utils/createInteraction';
 import { BadgeContext } from '../../store/contexts/badgeContext';
 import { DefaultButton } from '../../components/atoms/DefaultButton';
 import { firstName } from '../../utils/shortenName';
+import WalkthroughTooltip from '../../components/WalkthroughTooltip'
+import TouchableHighlight from 'react-native-walkthrough-tooltip';
 import colors from '../../../colors';
 import { ActivityBottomSheetContext } from '../../store/contexts/activityBottomSheetContext';
 import { ActivityBottomSheet } from '../../components/modals/ActivityBottomSheet';
 import { ActivityFlatList } from '../../components/atoms/ActivityFlatList';
 import { ActivitiesContext } from '../../store/contexts/activitiesContext';
 import { AnimatedMap } from '../../components/organisms/AnimatedMap';
+import { WalkthroughStepsContext } from '../../store/contexts/walkthroughStepsContext';
+import { BadgeEarnModal } from '../../components/modals/BadgeEarnModal';
 
 export default function Main({ navigation }) {
     const [region, setRegion] = useState(null);
@@ -29,11 +33,11 @@ export default function Main({ navigation }) {
         useContext(ActivityBottomSheetContext);
     const { activitiesList } = useContext(ActivitiesContext);
     const limitedActivitiesList = activitiesList.slice(0, 15);
+    const { setCompleted, completed } = useContext(WalkthroughStepsContext);
 
     const handleGetBadges = async () => {
         await getBadgeList(user._id);
     };
-
 
     useEffect(() => {
         setRegion(null);
@@ -47,49 +51,53 @@ export default function Main({ navigation }) {
         return (
             <Fragment>
                 {renderWelcomeText()}
-                {isEntity ? (
-                    <DefaultButton
-                        title="Criar campanha"
-                        variant="elevated"
-                        size="md"
-                        onPress={() =>
-                            createInteraction(
-                                user,
-                                navigation,
-                                'createCampaign',
-                            )
-                        }
-                    />
-                ) : (
-                    <View className="flex-row space-x-2 justify-between">
+                <WalkthroughTooltip incomingWalkthroughStep={1}>
+                  <TouchableHighlight>
+                    {isEntity ? (
                         <DefaultButton
-                            width="w-[48%]"
-                            title="Criar pedido"
+                            title="Criar campanha"
                             variant="elevated"
                             size="md"
                             onPress={() =>
                                 createInteraction(
                                     user,
                                     navigation,
-                                    'createHelpRequest',
+                                    'createCampaign',
                                 )
                             }
                         />
-                        <DefaultButton
-                            width="w-[48%]"
-                            title="Criar oferta"
-                            variant="elevated"
-                            size="md"
-                            onPress={() =>
-                                createInteraction(
-                                    user,
-                                    navigation,
-                                    'createHelpOffer',
-                                )
-                            }
-                        />
-                    </View>
-                )}
+                    ) : (
+                        <View className="flex-row space-x-2 justify-between">
+                            <DefaultButton
+                                width="w-[48%]"
+                                title="Criar pedido"
+                                variant="elevated"
+                                size="md"
+                                onPress={() =>
+                                    createInteraction(
+                                        user,
+                                        navigation,
+                                        'createHelpRequest',
+                                    )
+                                }
+                            />
+                            <DefaultButton
+                                width="w-[48%]"
+                                title="Criar oferta"
+                                variant="elevated"
+                                size="md"
+                                onPress={() =>
+                                    createInteraction(
+                                        user,
+                                        navigation,
+                                        'createHelpOffer',
+                                    )
+                                }
+                            />
+                        </View>
+                    )}
+                  </TouchableHighlight>
+                </WalkthroughTooltip>
             </Fragment>
         );
     };
@@ -136,15 +144,22 @@ export default function Main({ navigation }) {
                         android_ripple={{ color: colors.gray.DEFAULT }}
                         className="p-1"
                     >
+                      <WalkthroughTooltip 
+                        incomingWalkthroughStep={4} 
+                        customCloseAction={() => navigation.navigate('mapScreen')}
+                      >
                         <Text className="text-primary font-ms-bold">
                             VER MAIS
                         </Text>
+                      </WalkthroughTooltip>
                     </Pressable>
                 </View>
-                <ActivityFlatList
-                    list={limitedActivitiesList}
-                    onViewableItemsChanged={onViewableItemsChanged}
-                />
+                <WalkthroughTooltip incomingWalkthroughStep={3}>
+                  <ActivityFlatList
+                      list={limitedActivitiesList}
+                      onViewableItemsChanged={onViewableItemsChanged}
+                  />
+                </WalkthroughTooltip>
             </View>
         );
     };
@@ -167,6 +182,7 @@ export default function Main({ navigation }) {
                         navigation={navigation}
                         focusedCardLocation={focusedCardLocation}
                         visibleItemData={visibleItemData}
+                        incomingWalkthroughStep={2}
                     />
                 </View>
             </View>
@@ -178,6 +194,13 @@ export default function Main({ navigation }) {
                     setShowModal={setShowActivityModal}
                     selectedActivity={activityInfo}
                 />
+            )}
+            {completed && (
+              <BadgeEarnModal 
+                badges={[{template: {category: 'tutorialCompleted', rank: 1, iconName: 'volunteer-activism'}}]}
+                setIsVisible={setCompleted}
+                onviewBadge={() => {}}
+              />
             )}
         </View>
     );

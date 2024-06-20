@@ -4,16 +4,20 @@ import { ActivityMarker } from '../../molecules/ActivityMarker';
 import navigateToDescription from '../../../utils/navigateToDescription';
 import { UserContext } from '../../../store/contexts/userContext';
 import { ActivityBottomSheetContext } from '../../../store/contexts/activityBottomSheetContext';
+import WalkthroughTooltip from '../../WalkthroughTooltip';
 
 export function AnimatedMap({
     list,
     navigation,
     focusedCardLocation,
     visibleItemData,
+    incomingWalkthroughStep
 }) {
     const { user, userPosition } = useContext(UserContext);
     const { handleShowModal } = useContext(ActivityBottomSheetContext);
+
     return (
+      <WalkthroughTooltip incomingWalkthroughStep={incomingWalkthroughStep}>
         <CustomMap
             initialRegion={userPosition}
             animateToRegion={focusedCardLocation}
@@ -41,5 +45,6 @@ export function AnimatedMap({
                 );
             })}
         </CustomMap>
+      </WalkthroughTooltip>
     );
 }

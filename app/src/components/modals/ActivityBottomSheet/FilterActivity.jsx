@@ -9,6 +9,7 @@ import filterButtonTypes from '../../../docs/filterMarkers';
 import colors from '../../../../colors';
 import { ActivitiesContext } from '../../../store/contexts/activitiesContext';
 import { ViewWithDivider } from '../../atoms/ViewWithDivider';
+import WalkthroughTooltip from '../../WalkthroughTooltip';
 
 const filterTitle = (title, icon) => (
     <View className="flex-row space-x-2 items-center">
@@ -18,6 +19,7 @@ const filterTitle = (title, icon) => (
 );
 
 export const ActivitiesFilterBottomSheet = ({
+    navigation,
     handleCloseModal,
     storedActivities,
     storedCategories,
@@ -33,6 +35,7 @@ export const ActivitiesFilterBottomSheet = ({
         useState(storedActivities);
     const [inputedCategories, setInputedCategories] =
         useState(storedCategories);
+    const [shouldBeVisibleFromChild, setShouldBeVisibleFromChild] = useState(false)
 
     const removeFromState = (id, list, setter) => {
         const removeId = list.filter((idFromState) => idFromState !== id);
@@ -107,23 +110,42 @@ export const ActivitiesFilterBottomSheet = ({
         );
     };
 
+    const onChange = () => {
+      setTimeout(() => {
+        setShouldBeVisibleFromChild(true)
+      }, 800);
+    }
+
     return (
         <BaseBottomSheet
             bottomSheetRef={bottomSheetRef}
-            snapPoints={isBigPhone ? ['57%'] : ['70%']}
+            snapPoints={isBigPhone ? ['60%'] : ['70%']}
             scrollable={false}
             handleCloseModal={handleCloseModal}
+            onChange={onChange()}
         >
             <Text className="absolute -top-8 right-1/2 font-ms-bold text-xl">
                 Filtro
             </Text>
             <ViewWithDivider>
                 {filterTitle('Atividades', 'local-activity')}
-                {mapChips(filterButtonTypes, 'atividades')}
+                <WalkthroughTooltip 
+                  shouldBeVisibleFromChild={shouldBeVisibleFromChild} 
+                  incomingWalkthroughStep={6}
+                  horizontalAdjustment={-35}
+                >
+                  {mapChips(filterButtonTypes, 'atividades')}
+                </WalkthroughTooltip>
             </ViewWithDivider>
             <ViewWithDivider>
                 {filterTitle('Categorias (Até 3)', 'category')}
-                {mapChips(categories, 'categorias')}
+                <WalkthroughTooltip 
+                  incomingWalkthroughStep={7}
+                  customCloseAction={() => navigation.navigate('home')}
+                  useInteractionManager={true}
+                >
+                  {mapChips(categories, 'categorias')}
+                </WalkthroughTooltip>
             </ViewWithDivider>
             <DefaultButton
                 title="Aplicar"

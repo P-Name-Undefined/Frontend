@@ -3,6 +3,7 @@ import { Text, View } from 'react-native';
 import { IconButton } from '../../atoms/IconButton';
 import { styles } from './styles';
 import { RoundedFullButton } from '../../atoms/RoundedFullButton';
+import WalkthroughTooltip from '../../WalkthroughTooltip';
 
 export const CustomHeader = ({ title, navigation, iconType, buttonProps }) => {
     const isDrawerButton = iconType == 'drawer';
@@ -24,7 +25,16 @@ export const CustomHeader = ({ title, navigation, iconType, buttonProps }) => {
     return (
         <View style={styles.header}>
             <View style={styles.content}>
-                <IconButton onPress={onPress} style={styles.icon} {...icon} />
+                <WalkthroughTooltip
+                    incomingWalkthroughStep={8}
+                    placement="bottom"
+                >
+                    <IconButton
+                        onPress={onPress}
+                        style={styles.icon}
+                        {...icon}
+                    />
+                </WalkthroughTooltip>
                 <Text style={styles.title}>{title}</Text>
                 {buttonProps?.visible && (
                     <View className="absolute right-2">

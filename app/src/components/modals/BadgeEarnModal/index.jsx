@@ -34,6 +34,9 @@ export const BadgeEarnModal = ({
             2: 'você continua tentando ajudar ao máximo, e por conta disso agora recebeu a conquista',
             3: 'você continua tentando ajudar ao máximo, e por conta disso agora recebeu a conquista',
         },
+        tutorialCompleted: {
+            1: 'você completou o tutorial com sucesso! Agora podemos fazer a diferença na vida de milhares pessoas!'
+        }
     };
 
     const handleClose = () => {

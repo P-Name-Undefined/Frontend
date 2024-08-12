@@ -2,7 +2,7 @@ import { CommonActions, DrawerActions } from '@react-navigation/native';
 import * as React from 'react';
 import { View } from 'react-native';
 import { RFValue } from 'react-native-responsive-fontsize';
-import { Divider } from '../../atoms/Divider';
+import { Divider } from 'design-system';
 import { CustomDrawerItem } from '../../molecules/CustomDrawerItem';
 import { styles } from './styles';
 

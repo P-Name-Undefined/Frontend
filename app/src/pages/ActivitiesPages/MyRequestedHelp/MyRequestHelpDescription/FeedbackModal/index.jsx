@@ -1,8 +1,8 @@
 import React from 'react';
 import { BaseModal } from '../../../../../components/modals/BaseModal';
 import { Text, View } from 'react-native';
-import { Input } from '../../../../../components/atoms/Input';
-import { DefaultButton } from '../../../../../components/atoms/DefaultButton';
+import { Input } from 'design-system';
+import { DefaultButton } from 'design-system';
 
 export const FeedbackModal = ({
     setShowFeedbackModal,

@@ -4,7 +4,7 @@ import { styles } from './styles';
 import { SocialNetworkProfileContext } from '../../../store/contexts/socialNetworkProfileContext';
 import { LoadingContext } from '../../../store/contexts/loadingContext';
 import shortenName from '../../../utils/shortenName';
-import { RoundedFullButton } from '../../atoms/RoundedFullButton';
+import { RoundedFullButton } from 'design-system';
 import { UserContext } from '../../../store/contexts/userContext';
 import { ProfilePhoto } from '../ProfilePhoto';
 

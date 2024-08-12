@@ -3,8 +3,7 @@ import colors from '../../../../colors';
 import { Icon } from 'react-native-elements';
 import { Text, View } from 'react-native';
 import shortenName from '../../../utils/shortenName';
-import { DefaultButton } from '../../atoms/DefaultButton';
-import { CategoriesList } from '../../molecules/CategoriesList';
+import { DefaultButton, CategoriesList } from 'design-system';
 import openWhatsapp from '../../../utils/openWhatsapp';
 import { openMaps } from '../../../utils/openMaps';
 

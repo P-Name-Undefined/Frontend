@@ -1,0 +1,22 @@
+{
+  "name": "information-center",
+  "main": "index.js",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "expo start",
+    "reset-project": "node ./scripts/reset-project.js",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web",
+    "test": "jest --watchAll",
+    "lint": "expo lint"
+  },
+  "jest": {
+    "preset": "jest-expo"
+  },
+  "dependencies": {
+    "@react-native-async-storage/async-storage": "^1.23.1",
+    "design-system": "file:/Users/sabanai/Documents/MyProjects/MiaAjuda/Frontend/app/.yalc"
+  },
+  "yalcSig": "90c05b507d2d0360a937804a1ec5cd64"
+}

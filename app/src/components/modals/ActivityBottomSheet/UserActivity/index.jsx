@@ -4,7 +4,7 @@ import { Icon } from 'react-native-elements';
 import { ProfilePhoto } from '../../../molecules/ProfilePhoto';
 import getYearsSince from '../../../../utils/getYearsSince';
 import shortenName from '../../../../utils/shortenName';
-import { CategoriesList } from '../../../molecules/CategoriesList';
+import { CategoriesList } from 'design-system';
 import getActivityIcon from '../../../../utils/getActivityIcon';
 import Button from '../../../UI/button';
 import colors from '../../../../../colors';

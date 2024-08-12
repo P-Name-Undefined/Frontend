@@ -4,7 +4,7 @@ import { TextSwitch } from '../../components/molecules/TextSwitch';
 import { PersonalDataForm } from '../../components/organisms/PersonalDataForm';
 import { UserContext } from '../../store/contexts/userContext';
 import { alertMessage, alertSuccess } from '../../utils/Alert';
-import { TextButton } from '../../components/atoms/TextButton';
+import { TextButton } from 'design-system';
 import { LoadingContext } from '../../store/contexts/loadingContext';
 import actions from '../../store/actions';
 import { AddressForm } from '../../components/organisms/AddressForm';

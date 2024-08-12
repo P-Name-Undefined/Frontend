@@ -1,6 +1,6 @@
 import React, { Fragment, useCallback, useContext, useState } from 'react';
 import { View, ScrollView, Text } from 'react-native';
-import { DefaultButtonWithBadges } from '../../../../components/molecules/DefaultButtonWithBagdes';
+import { DefaultButtonWithBadges, DefaultButton } from 'design-system';
 import { HelpScreenLayout } from '../../../../components/templates/HelpScreenLayout';
 import { UserContext } from '../../../../store/contexts/userContext';
 import callService from '../../../../services/callService';
@@ -8,7 +8,6 @@ import helpService from '../../../../services/Help';
 import { LoadingContext } from '../../../../store/contexts/loadingContext';
 import { ExpansiveModal } from '../../../../components/modals/expansiveModal';
 import { UserProfileCard } from '../../../../components/atoms/UserProfileCard';
-import { DefaultButton } from '../../../../components/atoms/DefaultButton';
 import openWhatsapp from '../../../../utils/openWhatsapp';
 import callNumber from '../../../../utils/callNumber';
 import { HelpContext } from '../../../../store/contexts/helpContext';

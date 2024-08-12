@@ -1,6 +1,6 @@
 import React from 'react';
 import { View } from 'react-native';
-import { CircleIconButton } from '../../atoms/CircleIconButton';
+import { CircleIconButton } from 'design-system';
 
 export const FloatingIconButton = ({
     position = 'left',

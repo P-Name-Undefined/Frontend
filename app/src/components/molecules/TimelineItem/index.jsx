@@ -1,6 +1,6 @@
 import React from 'react';
 import { Image, Text, View } from 'react-native';
-import { Divider } from '../../atoms/Divider';
+import { Divider } from 'design-system';
 
 export const TimelineItem = ({ data, hasImage }) => {
     return (

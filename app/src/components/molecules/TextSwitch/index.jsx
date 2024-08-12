@@ -1,6 +1,6 @@
 import React from 'react';
 import { View } from 'react-native';
-import { TextSwitchButton } from '../../atoms/TextSwitchButton';
+import { TextSwitchButton } from 'design-system';
 
 export const TextSwitch = ({
     option1,

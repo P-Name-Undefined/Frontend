@@ -1,8 +1,7 @@
 import React from 'react';
 import { Text, View } from 'react-native';
-import { IconButton } from '../../atoms/IconButton';
+import { IconButton, RoundedFullButton } from 'design-system';
 import { styles } from './styles';
-import { RoundedFullButton } from '../../atoms/RoundedFullButton';
 
 export const CustomHeader = ({ title, navigation, iconType, buttonProps }) => {
     const isDrawerButton = iconType == 'drawer';

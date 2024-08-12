@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { View } from 'react-native';
 import { UserContext } from '../../../store/contexts/userContext';
-import { Input } from '../../atoms/Input';
+import { Input } from 'design-system';
 import { useFormik } from 'formik';
 import { initialValues, schema } from './constructor';
 import Button from '../../UI/button';

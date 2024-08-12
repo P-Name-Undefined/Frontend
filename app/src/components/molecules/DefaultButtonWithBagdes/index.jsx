@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text, View } from 'react-native';
 import { Badge } from 'react-native-elements';
-import { DefaultButton } from '../../atoms/DefaultButton';
+import { DefaultButton } from 'design-system';
 import styles from '../../../../assets/styles/helpDescription';
 
 export const DefaultButtonWithBadges = ({

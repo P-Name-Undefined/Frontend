@@ -1,6 +1,6 @@
 import React from 'react';
 import { Text, View } from 'react-native';
-import { CircleBadge } from '../../atoms/CircleBadge';
+import { CircleBadge } from 'design-system';
 
 export const BadgeCard = ({
     badgeTemplate,

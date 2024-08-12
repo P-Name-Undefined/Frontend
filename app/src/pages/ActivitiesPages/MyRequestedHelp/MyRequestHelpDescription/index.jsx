@@ -1,6 +1,6 @@
 import React, { Fragment, useCallback, useContext, useState } from 'react';
 import { View, ScrollView, Text } from 'react-native';
-import { DefaultButtonWithBadges, DefaultButton } from 'design-system';
+import { DefaultButtonWithBadges, DefaultButton, Dialog } from 'mia-auda-design-system';
 import { HelpScreenLayout } from '../../../../components/templates/HelpScreenLayout';
 import { UserContext } from '../../../../store/contexts/userContext';
 import callService from '../../../../services/callService';
@@ -12,7 +12,6 @@ import openWhatsapp from '../../../../utils/openWhatsapp';
 import callNumber from '../../../../utils/callNumber';
 import { HelpContext } from '../../../../store/contexts/helpContext';
 import { useFocusEffect, useNavigationState } from '@react-navigation/native';
-import { Dialog } from '../../../../components/molecules/Dialog';
 import { FeedbackContext } from '../../../../store/contexts/feedbackContext';
 import { FeedbackModal } from './FeedbackModal';
 import { BadgeContext } from '../../../../store/contexts/badgeContext';

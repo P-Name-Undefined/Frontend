@@ -4080,12 +4080,6 @@ dequal@^1.0.0:
   resolved "https://registry.yarnpkg.com/dequal/-/dequal-1.0.1.tgz#dbbf9795ec626e9da8bd68782f4add1d23700d8b"
   integrity sha512-Fx8jxibzkJX2aJgyfSdLhr9tlRoTnHKrRJuu2XHlAgKioN2j19/Bcbe0d4mFXYZ3+wpE2KVobUVTfDutcD17xQ==
 
-"design-system@file:.yalc":
-  version "0.0.0"
-
-"design-system@file:.yalc/design-system":
-  version "1.0.0"
-
 destroy@1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/destroy/-/destroy-1.2.0.tgz#4803735509ad8be552934c67df614f94e66fa015"
@@ -5518,12 +5512,6 @@ inflight@^1.0.4:
     once "^1.3.0"
     wrappy "1"
 
-"information-center@file:.yalc/information-center":
-  version "1.0.0"
-  dependencies:
-    "@react-native-async-storage/async-storage" "^1.23.1"
-    design-system "file:.yalc"
-
 inherits@2, inherits@2.0.4, inherits@^2.0.3, inherits@^2.0.4, inherits@~2.0.3:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/inherits/-/inherits-2.0.4.tgz#0fa2c64f932917c3433a0ded55363aae37416b7c"
@@ -6801,6 +6789,19 @@ metro@0.73.10:
     throat "^5.0.0"
     ws "^7.5.1"
     yargs "^17.5.1"
+
+mia-ajuda-information-center@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/mia-ajuda-information-center/-/mia-ajuda-information-center-1.0.0.tgz#1c181ff060c132d7ce323e471a1250ac02088eaa"
+  integrity sha512-sYzYyP4fCPhygjgqBPtTxn9kowQK/xIZCDMwqnuiRLzsq+s8Xk4UHBMlCZRxcgGylx4xa8rXlKbGrD//ThWkBA==
+  dependencies:
+    "@react-native-async-storage/async-storage" "^1.23.1"
+    mia-auda-design-system "^1.0.0"
+
+mia-auda-design-system@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/mia-auda-design-system/-/mia-auda-design-system-1.0.0.tgz#dec0b012b741cb94e532044a39ec697dc86ed993"
+  integrity sha512-y7C8a1lw+LTrKiwplCYU8eXyMOeGugnA/yWRIBfqNay1fE4lDcHG422XsFw2ynWsvyu4Z/pMt64p3tREKW+A4Q==
 
 micromatch@^4.0.2, micromatch@^4.0.4, micromatch@^4.0.5:
   version "4.0.5"

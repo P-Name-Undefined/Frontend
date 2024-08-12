@@ -15,7 +15,7 @@ import callService from '../../../services/callService';
 import { LoadingContext } from '../../../store/contexts/loadingContext';
 import { BadgeContext } from '../../../store/contexts/badgeContext';
 import { alertSuccess } from '../../../utils/Alert';
-import { Dialog } from '../../../components/molecules/Dialog';
+import { Dialog } from 'mia-auda-design-system';
 export default function Location({ route }) {
     const { requestInfo, requestType } = route.params;
 

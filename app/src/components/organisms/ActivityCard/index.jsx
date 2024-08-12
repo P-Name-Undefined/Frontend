@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Pressable, Text, View } from 'react-native';
 import { Icon } from 'react-native-elements';
-import { Badge } from 'design-system';
+import { Badge } from 'mia-auda-design-system';
 import getActivityIcon from '../../../utils/getActivityIcon';
 import SeedlingIcon from '../../../../assets/images/Seedling';
 import isRecentDate from '../../../utils/isRecentDate';

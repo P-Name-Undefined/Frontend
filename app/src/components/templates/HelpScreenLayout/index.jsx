@@ -3,7 +3,7 @@ import { ScrollView, Text, TouchableOpacity, View } from 'react-native';
 import CustomMap from '../../CustomMap';
 import { Icon } from 'react-native-elements';
 import { BordedScreenLayout } from '../BordedScreenLayout';
-import { InformativeField, CategoriesList } from 'design-system';
+import { InformativeField, CategoriesList } from 'mia-auda-design-system';
 import { ActivityMarker } from '../../molecules/ActivityMarker';
 
 export function HelpScreenLayout({

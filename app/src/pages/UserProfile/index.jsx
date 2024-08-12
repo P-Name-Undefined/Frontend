@@ -1,11 +1,9 @@
 import React, { useCallback, useContext, useState, useEffect } from 'react';
 import { Text, View } from 'react-native';
-import { TextSwitch } from '../../components/molecules/TextSwitch';
 import { SocialNetworkProfileContext } from '../../store/contexts/socialNetworkProfileContext';
 import { LoadingContext } from '../../store/contexts/loadingContext';
-import { FollowCount } from '../../components/molecules/FollowCount';
 import { ActivitiesList } from '../../components/organisms/ActivitiesList';
-import { DescriptionBox } from '../../components/molecules/DescriptionBox';
+import { DescriptionBox, FollowCount, TextSwitch } from 'mia-auda-design-system';
 import { UserContext } from '../../store/contexts/userContext';
 import { BadgeContext } from '../../store/contexts/badgeContext';
 import { ScrollView } from 'react-native-gesture-handler';

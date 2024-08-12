@@ -1,6 +1,6 @@
 import React from 'react';
 import { Text, View } from 'react-native';
-import { ProfilePhoto } from '../../molecules/ProfilePhoto';
+import { ProfilePhoto } from 'mia-auda-design-system';
 
 export function BordedScreenLayout({
     children,

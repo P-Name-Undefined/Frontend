@@ -10,7 +10,7 @@ import campaignService from '../../../services/Campaign';
 import PlusIconTextButton from '../../../components/PlusIconTextButton';
 import createInteraction from '../../../utils/createInteraction';
 import { LoadingContext } from '../../../store/contexts/loadingContext';
-import { Dialog } from '../../../components/molecules/Dialog';
+import { Dialog } from 'mia-auda-design-system';
 
 export default function CampaignsFinished({ navigation }) {
     const { isLoading, setIsLoading } = useContext(LoadingContext);

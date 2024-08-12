@@ -5,7 +5,7 @@ import callService from '../../../services/callService';
 import helpService from '../../../services/Help';
 import { alertSuccess } from '../../../utils/Alert';
 import { BaseBottomSheet } from '../BaseBottomSheet';
-import { Dialog } from '../../molecules/Dialog';
+import { Dialog } from 'mia-auda-design-system';
 
 export const ExpansiveModal = ({
     setShowModal,

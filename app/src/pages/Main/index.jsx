@@ -9,7 +9,7 @@ import { View, Text, Pressable, Dimensions } from 'react-native';
 import { UserContext } from '../../store/contexts/userContext';
 import createInteraction from '../../utils/createInteraction';
 import { BadgeContext } from '../../store/contexts/badgeContext';
-import { DefaultButton } from 'design-system';
+import { DefaultButton } from 'mia-auda-design-system';
 import { firstName } from '../../utils/shortenName';
 import colors from '../../../colors';
 import { ActivityBottomSheetContext } from '../../store/contexts/activityBottomSheetContext';

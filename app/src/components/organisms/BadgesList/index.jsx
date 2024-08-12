@@ -2,7 +2,7 @@ import React from 'react';
 import { NotFound } from '../NotFound';
 import { HorizontalList } from '../HorizontalList';
 import { useNavigation } from '@react-navigation/native';
-import { BadgeCard } from 'design-system';
+import { BadgeCard } from 'mia-auda-design-system';
 
 export const BadgesList = ({ badges, userId }) => {
     const navigation = useNavigation();

@@ -5,7 +5,7 @@ import {
     BottomSheetScrollView,
 } from '@gorhom/bottom-sheet';
 import React, { useEffect } from 'react';
-import { FloatingIconButton } from '../../molecules/FloatingIconButton';
+import { FloatingIconButton } from 'mia-auda-design-system';
 import { ActivityIndicator, Image, View } from 'react-native';
 import colors from '../../../../colors';
 

@@ -1,10 +1,9 @@
 import React, { useContext, useState } from 'react';
 import { Text, View } from 'react-native';
 import { Icon } from 'react-native-elements';
-import { ProfilePhoto } from '../../../molecules/ProfilePhoto';
 import getYearsSince from '../../../../utils/getYearsSince';
 import shortenName from '../../../../utils/shortenName';
-import { CategoriesList } from 'design-system';
+import { CategoriesList, Dialog, ProfilePhoto } from 'mia-auda-design-system';
 import getActivityIcon from '../../../../utils/getActivityIcon';
 import Button from '../../../UI/button';
 import colors from '../../../../../colors';
@@ -13,7 +12,6 @@ import { ActivitiesContext } from '../../../../store/contexts/activitiesContext'
 import { BadgeContext } from '../../../../store/contexts/badgeContext';
 import { LoadingContext } from '../../../../store/contexts/loadingContext';
 import { UserContext } from '../../../../store/contexts/userContext';
-import { Dialog } from '../../../molecules/Dialog';
 import { translatedActivities } from '../../../../utils/translatedActivities';
 
 export const UserActivity = ({

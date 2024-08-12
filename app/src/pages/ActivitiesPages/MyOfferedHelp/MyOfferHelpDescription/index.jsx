@@ -5,10 +5,9 @@ import { alertSuccess } from '../../../../utils/Alert';
 import { UserContext } from '../../../../store/contexts/userContext';
 import callService from '../../../../services/callService';
 import { ExpansiveModal } from '../../../../components/modals/expansiveModal';
-import { DefaultButtonWithBadges } from 'design-system';
+import { DefaultButtonWithBadges, Dialog } from 'mia-auda-design-system';
 import { LoadingContext } from '../../../../store/contexts/loadingContext';
 import { HelpScreenLayout } from '../../../../components/templates/HelpScreenLayout';
-import { Dialog } from '../../../../components/molecules/Dialog';
 
 export default function OfferHelpDescription({ route, navigation }) {
     const { helpId, routeId } = route.params;

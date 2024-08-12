@@ -2,7 +2,7 @@ import React, { useContext, useRef, useState } from 'react';
 import { BaseBottomSheet } from '../BaseBottomSheet';
 import { Dimensions, Text, View } from 'react-native';
 import { Icon } from 'react-native-elements';
-import { Chips, DefaultButton, ViewWithDivider } from 'design-system';
+import { Chips, DefaultButton, ViewWithDivider } from 'mia-auda-design-system';
 import { CategoryContext } from '../../../store/contexts/categoryContext';
 import filterButtonTypes from '../../../docs/filterMarkers';
 import colors from '../../../../colors';

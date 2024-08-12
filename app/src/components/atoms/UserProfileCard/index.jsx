@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import { Pressable, Text, View } from 'react-native';
-import { ProfilePhoto } from '../../molecules/ProfilePhoto';
+import { ProfilePhoto } from 'mia-auda-design-system';
 import formatPhone from '../../../utils/formatPhone';
 import { Icon } from 'react-native-elements';
 import { useNavigation } from '@react-navigation/native';

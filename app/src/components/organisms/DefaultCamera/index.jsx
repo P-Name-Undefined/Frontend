@@ -1,7 +1,7 @@
 import { Camera, CameraType } from 'expo-camera';
 import React from 'react';
 import { Image, Text, View } from 'react-native';
-import { DefaultButton } from 'design-system';
+import { DefaultButton } from 'mia-auda-design-system';
 
 export const DefaultCamera = ({
     cameraRef,

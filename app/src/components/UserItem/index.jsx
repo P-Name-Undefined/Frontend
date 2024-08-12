@@ -2,7 +2,7 @@ import { useNavigation } from '@react-navigation/native';
 import React from 'react';
 import { View, Image, Text, Pressable } from 'react-native';
 import shortenName, { untilTwoLastNames } from '../../utils/shortenName';
-import { RoundedFullButton } from 'design-system';
+import { RoundedFullButton } from 'mia-auda-design-system';
 
 const UserItem = ({ user, showButton = false, onPress }) => {
     const navigation = useNavigation();

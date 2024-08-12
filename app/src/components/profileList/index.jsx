@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Pressable } from 'react-native';
 import styles from './styles';
 import { UserListItem } from '../molecules/UserListItem';
-import { Divider } from 'design-system';
+import { Divider } from 'mia-auda-design-system';
 import { useNavigation } from '@react-navigation/native';
 
 export default function ProfileList({ usersProfile, filterList = false }) {

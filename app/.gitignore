@@ -16,6 +16,7 @@ web-report/
 
 #webstorm
 .idea
+../.idea/
 
 #auth json
 authmiaajuda-firebase.json

@@ -6,7 +6,7 @@ import socialNetworkProfileservice from '../../services/socialNetworkProfile';
 import { UserContext } from '../../store/contexts/userContext';
 import ProfileList from '../../components/profileList';
 import { useFocusEffect } from '@react-navigation/native';
-import { SearchBar } from '../../components/atoms/SearchBar';
+import { SearchBar } from 'mia-auda-design-system';
 import { LoadingContext } from '../../store/contexts/loadingContext';
 import { NotFound } from '../../components/organisms/NotFound';
 

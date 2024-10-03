@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { BaseModal } from '../BaseModal';
-import { CircleBadge } from '../../atoms/CircleBadge';
+import { CircleBadge } from 'mia-auda-design-system';
 import { Text, View } from 'react-native';
 import Button from '../../UI/button';
 

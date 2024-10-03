@@ -2,9 +2,8 @@ import React, { Fragment } from 'react';
 import { ScrollView, Text, TouchableOpacity, View } from 'react-native';
 import CustomMap from '../../CustomMap';
 import { Icon } from 'react-native-elements';
-import { CategoriesList } from '../../molecules/CategoriesList';
 import { BordedScreenLayout } from '../BordedScreenLayout';
-import { InformativeField } from '../../atoms/InformativeField';
+import { InformativeField, CategoriesList } from 'mia-auda-design-system';
 import { ActivityMarker } from '../../molecules/ActivityMarker';
 
 export function HelpScreenLayout({

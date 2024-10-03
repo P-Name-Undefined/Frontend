@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { ScrollView, Text, View } from 'react-native';
 import { BadgeContext } from '../../store/contexts/badgeContext';
-import { BadgeCard } from '../../components/molecules/BadgeCard';
+import { BadgeCard } from 'mia-auda-design-system';
 import { HorizontalList } from '../../components/organisms/HorizontalList';
 
 export const Badges = ({ route }) => {

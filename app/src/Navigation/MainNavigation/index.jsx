@@ -4,7 +4,7 @@ import { drawerScreenOptions } from './options';
 import Routes from './Routes';
 import { CustomDrawerContent } from '../../components/templates/CustomDrawerContent';
 import { UserContext } from '../../store/contexts/userContext';
-import InformationsCenter from '../../pages/InformationsCenter';
+import { InformationsCenter } from 'mia-ajuda-information-center';
 import headerStyle from './MainNavigationStyles/MainStackHeaderStyle';
 const Drawer = createDrawerNavigator();
 

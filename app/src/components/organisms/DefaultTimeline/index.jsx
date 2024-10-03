@@ -1,7 +1,7 @@
 import React from 'react';
 import Timeline from 'react-native-timeline-flatlist';
 import colors from '../../../../colors';
-import { TimelineItem } from '../../molecules/TimelineItem';
+import { TimelineItem } from 'mia-auda-design-system';
 
 export const DefaultTimeline = ({
     data,

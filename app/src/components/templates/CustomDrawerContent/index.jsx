@@ -6,7 +6,7 @@ import { UserContext } from '../../../store/contexts/userContext';
 import CustomDrawerItemList from '../../organisms/CustomDrawerList/';
 import styles from './styles';
 import { UserCard } from '../../molecules/UserCard';
-import { Divider } from '../../atoms/Divider';
+import { Divider } from 'mia-auda-design-system';
 
 export function CustomDrawerContent(props) {
     const { user } = useContext(UserContext);

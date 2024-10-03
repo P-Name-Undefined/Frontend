@@ -1,6 +1,6 @@
 import React from 'react';
 import { Modal, View } from 'react-native';
-import { FloatingIconButton } from '../../molecules/FloatingIconButton';
+import { FloatingIconButton } from 'mia-auda-design-system';
 
 export const BaseModal = ({
     isVisible,

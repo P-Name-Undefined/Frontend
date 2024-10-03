@@ -1,8 +1,7 @@
 import React from 'react';
 import { BaseModal } from '../../../../../components/modals/BaseModal';
 import { Text, View } from 'react-native';
-import { Input } from '../../../../../components/atoms/Input';
-import { DefaultButton } from '../../../../../components/atoms/DefaultButton';
+import { DefaultButton, Input } from 'mia-auda-design-system';
 
 export const FeedbackModal = ({
     setShowFeedbackModal,

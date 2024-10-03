@@ -2,8 +2,7 @@ import { CommonActions, DrawerActions } from '@react-navigation/native';
 import * as React from 'react';
 import { View } from 'react-native';
 import { RFValue } from 'react-native-responsive-fontsize';
-import { Divider } from '../../atoms/Divider';
-import { CustomDrawerItem } from '../../molecules/CustomDrawerItem';
+import { Divider, CustomDrawerItem } from 'mia-auda-design-system';
 import { styles } from './styles';
 
 const sections = [

@@ -4,9 +4,8 @@ import { styles } from './styles';
 import { SocialNetworkProfileContext } from '../../../store/contexts/socialNetworkProfileContext';
 import { LoadingContext } from '../../../store/contexts/loadingContext';
 import shortenName from '../../../utils/shortenName';
-import { RoundedFullButton } from '../../atoms/RoundedFullButton';
+import { RoundedFullButton, ProfilePhoto } from 'mia-auda-design-system';
 import { UserContext } from '../../../store/contexts/userContext';
-import { ProfilePhoto } from '../ProfilePhoto';
 
 export const UserListItem = ({ user }) => {
     const { followUser, unfollowUser } = useContext(

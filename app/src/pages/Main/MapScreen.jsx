@@ -7,8 +7,7 @@ import React, {
 } from 'react';
 import { StatusBar, View } from 'react-native';
 import { ScreenTemplateContext } from '../../store/contexts/ScreenTemplateContext';
-import { FloatingIconButton } from '../../components/molecules/FloatingIconButton';
-import { Chips } from '../../components/atoms/Chips';
+import { Chips, FloatingIconButton } from 'mia-auda-design-system';
 import { ActivitiesFilterBottomSheet } from '../../components/modals/ActivityBottomSheet/FilterActivity';
 import { LoadingContext } from '../../store/contexts/loadingContext';
 import { ActivityBottomSheetContext } from '../../store/contexts/activityBottomSheetContext';

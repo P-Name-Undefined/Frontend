@@ -1,14 +1,12 @@
 import React, { useContext, useRef, useState } from 'react';
 import { ScrollView, View } from 'react-native';
-import { TextSwitch } from '../../components/molecules/TextSwitch';
 import { PersonalDataForm } from '../../components/organisms/PersonalDataForm';
 import { UserContext } from '../../store/contexts/userContext';
 import { alertMessage, alertSuccess } from '../../utils/Alert';
-import { TextButton } from '../../components/atoms/TextButton';
+import { TextButton, ProfilePhoto, TextSwitch } from 'mia-auda-design-system';
 import { LoadingContext } from '../../store/contexts/loadingContext';
 import actions from '../../store/actions';
 import { AddressForm } from '../../components/organisms/AddressForm';
-import { ProfilePhoto } from '../../components/molecules/ProfilePhoto';
 import { DefaultCamera } from '../../components/organisms/DefaultCamera';
 import { Camera } from 'expo-camera';
 

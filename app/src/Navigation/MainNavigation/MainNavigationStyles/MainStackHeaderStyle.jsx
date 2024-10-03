@@ -1,5 +1,5 @@
 import React from 'react';
-import { CustomHeader } from '../../../components/molecules/CustomHeader';
+import { CustomHeader } from 'mia-auda-design-system';
 import { getScreenTtile } from '../../../utils/getScreenTitle';
 
 const headerStyle = ({

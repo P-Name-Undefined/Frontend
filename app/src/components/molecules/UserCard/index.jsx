@@ -4,7 +4,7 @@ import { Icon } from 'react-native-elements';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { styles } from './styles';
 import shortenName from '../../../utils/shortenName';
-import { ProfilePhoto } from '../ProfilePhoto';
+import { ProfilePhoto } from 'mia-auda-design-system';
 import { UserContext } from '../../../store/contexts/userContext';
 
 export const UserCard = ({ name, email, photo }) => {

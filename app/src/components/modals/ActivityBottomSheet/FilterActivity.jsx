@@ -2,13 +2,11 @@ import React, { useContext, useRef, useState } from 'react';
 import { BaseBottomSheet } from '../BaseBottomSheet';
 import { Dimensions, Text, View } from 'react-native';
 import { Icon } from 'react-native-elements';
-import { Chips } from '../../atoms/Chips';
-import { DefaultButton } from '../../atoms/DefaultButton';
+import { Chips, DefaultButton, ViewWithDivider } from 'mia-auda-design-system';
 import { CategoryContext } from '../../../store/contexts/categoryContext';
 import filterButtonTypes from '../../../docs/filterMarkers';
 import colors from '../../../../colors';
 import { ActivitiesContext } from '../../../store/contexts/activitiesContext';
-import { ViewWithDivider } from '../../atoms/ViewWithDivider';
 
 const filterTitle = (title, icon) => (
     <View className="flex-row space-x-2 items-center">

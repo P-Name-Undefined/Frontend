@@ -19,7 +19,7 @@ import Button from '../../../components/UI/button';
 import openWhatsapp from '../../../utils/openWhatsapp';
 import formatDate from '../../../utils/formatDate';
 import { LoadingContext } from '../../../store/contexts/loadingContext';
-import { Dialog } from '../../../components/molecules/Dialog';
+import { Dialog } from 'mia-auda-design-system';
 
 export default function CampaignDescription({ route, navigation }) {
     const { campaign } = route.params;
